@@ -1,12 +1,17 @@
 from csv import *
 from tkinter import *
 from tkinter import messagebox
+import os
 
 window=Tk()
 window.configure(bg = "White")
 window.title("Data Entry")
 window.geometry("700x350")
 main_lst=[]
+
+
+
+
 
 
 
@@ -83,17 +88,29 @@ age.grid(row=11,column=25)
 contact.grid(row=12,column=25)
 address.grid(row=13,column=25)
 drop_menu.grid(row=14,column=25)
-save.grid(row=24,column=26,columnspan=2)
-add.grid(row=24,column=25,columnspan=2)
-clear.grid(row=26,column=26,columnspan=2)
-Exit.grid(row=26,column=25,columnspan=2)
+save.grid(row=24,column=26,columnspan=1)
+add.grid(row=24,column=25,columnspan=1)
+clear.grid(row=26,column=26,columnspan=1)
+Exit.grid(row=26,column=25,columnspan=1)
 
+
+def Add_detail():
+    pass 
+def DataFile():
+    os.startfile("C:\\Raunak Dey\\data_entry.csv")
+    pass 
+
+menubar = Menu(window)
+ 
+# ManuBar 1 :
+filemenu = Menu(menubar, tearoff = 0)
+menubar.add_cascade(label = 'Options', menu = filemenu)
+filemenu.add_command(label = "Add details", command = Add_detail)
+filemenu.add_command(label = "Open the data  file", command = DataFile)
+
+window.config(menu=menubar)
 
 window.mainloop()
 print(list)
 print(main_lst)
-
-
-
-
 
