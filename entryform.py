@@ -10,7 +10,7 @@ window.geometry("700x350")
 main_lst=[]
 
 
-
+token_no = 000000
 
 
 
@@ -22,12 +22,12 @@ for i in range(50):
 def Add():
    lst=[name.get(),age.get(),contact.get(),address.get(),Department.get()]
    main_lst.append(lst)
-   messagebox.showinfo("Information","The data has been added successfully")
+   messagebox.showinfo("Information","The data has been added successfullyn and the token Number is : ")
 
 def Save():
    with open("data_entry.csv","w") as file:
       Writer=writer(file)
-      Writer.writerow(["Name","Age","Contact","Address","Department"])
+      Writer.writerow(["Name","Age","Contact","Address","Department","Token Number"])
       Writer.writerows(main_lst)
       messagebox.showinfo("Information","Saved succesfully")
 
@@ -73,7 +73,7 @@ drop_menu = OptionMenu(window, Department,"Computer Science and Engineering", "I
 #drop.pack()
 
 save=Button(window,text="Save",font="Arial 12",padx=7,pady=5,background="Blue",foreground="White",command=Save)
-add=Button(window,text="Add",font="Arial 12",padx=7,pady=5,background="Blue",foreground="White",command=Add)
+#add=Button(window,text="Add",font="Arial 12",padx=7,pady=5,background="Blue",foreground="White",command=Add)
 clear=Button(window,text="Clear",font = "Arial 12",padx=7,pady=5,background="Blue",foreground="White",command=Clear)
 Exit=Button(window,text="Exit",font="Arial 12",padx=7,pady=5,background="Blue",foreground="White",command=window.quit)
 
@@ -89,7 +89,7 @@ contact.grid(row=12,column=25)
 address.grid(row=13,column=25)
 drop_menu.grid(row=14,column=25)
 save.grid(row=24,column=26,columnspan=1)
-add.grid(row=24,column=25,columnspan=1)
+#add.grid(row=24,column=25,columnspan=1)
 clear.grid(row=26,column=26,columnspan=1)
 Exit.grid(row=26,column=25,columnspan=1)
 
@@ -105,7 +105,7 @@ menubar = Menu(window)
 # ManuBar 1 :
 filemenu = Menu(menubar, tearoff = 0)
 menubar.add_cascade(label = 'Options', menu = filemenu)
-filemenu.add_command(label = "Add details", command = Add_detail)
+filemenu.add_command(label = "Add details", command = Add)
 filemenu.add_command(label = "Open the data  file", command = DataFile)
 
 window.config(menu=menubar)
