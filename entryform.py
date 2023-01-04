@@ -97,7 +97,7 @@ Exit.grid(row=26,column=25,columnspan=1)
 def Add_detail():
     pass 
 def DataFile():
-    os.startfile("C:\\Raunak Dey\\data_entry.csv")
+    os.startfile("data_entry.csv")
     pass 
 
 menubar = Menu(window)
